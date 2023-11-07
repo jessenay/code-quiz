@@ -1,0 +1,12 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.codequiz {
+    text-align: center;
+}
+
+.timer {
+    font-size: 1.5em;
+}
