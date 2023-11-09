@@ -8,28 +8,35 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class ="body">
+<body class="body">
     <header class="header">
         <h2 class="highscores">View High Scores</h2>
         <h2 class="timer">60</h2>
     </header>
-    <div>
-        <h1 class="codequiz">Quiztime!</h1>
-    </div>
-
-    <div class="questioncontent">
-        <h2 class="questiontitle"></h2>
-
-        <div class="choices">
-
+    <div class = "quiz-container">
+        <div>
+            <h1 class="codequiz">Quiztime!</h1>
         </div>
-    </div>
 
-    <div>
-        <button class="startbutton">Start</button>
+        <div class="questioncontent">
+            <h2 class="questiontitle"></h2>
+
+            <div class="choices">
+
+            </div>
+        </div>
+
+        <div>
+            <button class="startbutton">Start</button>
+        </div>
     </div>
     <div class="result-container">
         <h2 class="result-text"></h2>
+    </div>
+    <div class="input-section" style="display: none;">
+<label for ="initials">Enter your initials:</label>
+<input type="text" id="initials"/>
+<button id="saveScore">Save your Score</button>
     </div>
 
     <script src="script.js"></script>

@@ -1,6 +1,6 @@
-/* .body {
+.body {
     background-color: black;
-} */
+}
 
 .header {
     display: flex;
@@ -27,6 +27,7 @@
     height: 100px;
     font-size: 30px;
     background-color: blueviolet;
+    color: aliceblue;
 }
 
 .startbutton:hover {
@@ -37,7 +38,7 @@
     text-align: center;
     background-color: aliceblue;
     height: 400px;
-  
+  margin-bottom: 30px;
 }
 
 .questiontitle {
@@ -47,4 +48,22 @@
 .choices {
     display:grid;
     grid-template-rows: 80px 80px 80px 80px;
+}
+
+.wrong-answer {
+    background-color: red;
+    color: white;
+}
+
+.result-container {
+    background-color: aliceblue;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 70px;
+}
+
+.input-section {
+    color: aliceblue;
+    text-align: center;
 }

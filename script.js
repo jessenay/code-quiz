@@ -5,37 +5,37 @@ var choices = document.querySelector(".choices");
 var timer = document.querySelector(".timer");
 var resultContainer = document.querySelector(".result-container");
 var resultText = document.querySelector(".result-text");
-    
+
 var currentquestion = 0;
 var questions = [
     {
-        questiontitle: "question 1",
-        choices: ["choice1a", "choice2a", "choice3a", "choice4a"],
-        answer: "choice3a"
+        questiontitle: "Inside which HTML element do we put the JavaScript?",
+        choices: ["<scripting>", "<js>", "<script>", "<javascript>"],
+        answer: "<script>"
     },
 
     {
-        questiontitle: "question 2",
-        choices: ["choice1b", "choice2b", "choice3b", "choice4b"],
-        answer: "choice3b"
+        questiontitle: "How do you create a function in JavaScript?",
+        choices: ["function:myFunction()", "function = myFunction()", "function ~ myFunction()", "function myFunction()"],
+        answer: "function myFunction()"
     },
 
     {
-        questiontitle: "question 3",
-        choices: ["choice1c", "choice2c", "choice3c", "choice4c"],
-        answer: "choice3c"
+        questiontitle: "How can you add a single line comment in Javascript?",
+        choices: ["//This is a comment", "`This is a comment`", "<!--This is a comment-->", "/*This is a comment*/"],
+        answer: "//This is a comment"
     },
 
     {
-        questiontitle: "question 4",
-        choices: ["choice1d", "choice2d", "choice3d", "choice4d"],
-        answer: "choice3d"
+        questiontitle: "Which operator is used to assign a value to a variable?",
+        choices: ["-", "*", "=", "x"],
+        answer: "="
     },
 
     {
-        questiontitle: "question 5",
-        choices: ["choice1e", "choice2e", "choice3e", "choice4e"],
-        answer: "choice3e"
+        questiontitle: "How do you declare a JavaScript variable?",
+        choices: ["var carName;", "variable carName;", "v carName;", "vrbl carName;"],
+        answer: "var carName;"
     },
 ];
 
@@ -69,6 +69,8 @@ function endQuiz() {
     choices.textContent = "";
     clearInterval(countdown);
     displayResult(timeLeft);
+    document.querySelector(".quiz-container").style.display = "none";
+    document.querySelector(".input-section").style.display = "block";
 }
 
 function displayResult(score) {
@@ -96,8 +98,10 @@ function showquestion() {
         // Start the countdown when showing the question
         startCountdown();
     } else {
-       displayResult(timeLeft);
-}
+        document.querySelector(".quiz-container").style.display = "none";
+        document.querySelector(".input-section").style.display = "block";
+        displayResult(timeLeft);
+    }
 }
 
 
@@ -105,16 +109,33 @@ function checkanswer() {
     console.log(this.dataset.value);
     if (this.dataset.value === questions[currentquestion].answer) {
         currentquestion++;
-        
+
         if (currentquestion < questions.length) {
             showquestion();
         } else {
             endQuiz();
         }
     } else {
+        this.classList.add('wrong-answer');
         timeLeft -= 3;
         displayTimeLeft(timeLeft);
     }
 }
+
+document.getElementById("saveScore").addEventListener("click", function () {
+    const initials = document.getElementById("initials").value;
+    if (initials.trim() !== "") {
+        // Assuming you have an array to store high scores
+        const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+        highScores.push({ initials, score: timeLeft });
+        localStorage.setItem("highScores", JSON.stringify(highScores));
+
+        // You can redirect the user to a high scores page or update the UI accordingly
+        console.log("Score saved!");
+    } else {
+        alert("Please enter your initials!");
+    }
+});
+
 
 startbutton.addEventListener("click", startquizandtimer);
