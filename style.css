@@ -1,12 +1,50 @@
+/* .body {
+    background-color: black;
+} */
+
 .header {
     display: flex;
     justify-content: space-between;
+    background-color: blueviolet;
+    padding: 20px;
+    border-radius: 10px;
+    color: aliceblue;
+    align-items: center;
 }
 
 .codequiz {
     text-align: center;
+    color: blueviolet;
+    font-size: 50px;
 }
 
 .timer {
-    font-size: 1.5em;
+    font-size: 3em;
+}
+
+.startbutton {
+    width: 200px;
+    height: 100px;
+    font-size: 30px;
+    background-color: blueviolet;
+}
+
+.startbutton:hover {
+    background-color: aliceblue;
+}
+
+.questioncontent {
+    text-align: center;
+    background-color: aliceblue;
+    height: 400px;
+  
+}
+
+.questiontitle {
+    font-size: 25px;
+}
+
+.choices {
+    display:grid;
+    grid-template-rows: 80px 80px 80px 80px;
 }
