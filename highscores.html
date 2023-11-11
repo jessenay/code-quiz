@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>High Scores Page</title>
+</head>
+
+<body class="scorespage">
+    <header class="scorestitle">High Scores!</header>
+
+    <ul id="scores">
+
+    </ul>
+
+    <div>
+        <button>Clear Leaderboard</button>
+    </div>
+
+    <div>
+        <a href="./index.html"><button>Return to home Page</button></a>
+    </div>
+
+    <script>
+        var scoresEl = document.querySelector("#scores")
+        const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+        highScores.sort(function (a, b) { return b.score - a.score });
+        for (let i = 0; i < highScores.length; i++) {
+            console.log(highScores[i]);
+            var listEl = document.createElement("li");
+            listEl.textContent = highScores[i].initials + " " + highScores[i].score;
+            scoresEl.appendChild(listEl)
+        }
+
+        function clearLeaderboard() {
+            localStorage.clear();
+            scoresEl.innerHTML = '';
+        }
+
+        document.addEventListener("click", clearLeaderboard);
+    </script>
+</body>
+
+</html>

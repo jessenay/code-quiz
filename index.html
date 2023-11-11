@@ -10,15 +10,15 @@
 
 <body class="body">
     <header class="header">
-        <h2 class="highscores">View High Scores</h2>
+        <a href="./highscores.html"><button class="highscores">View High Scores</button></a>
         <h2 class="timer">60</h2>
     </header>
-    <div class = "quiz-container">
+    <div class="quiz-container">
         <div>
             <h1 class="codequiz">Quiztime!</h1>
         </div>
 
-        <div class="questioncontent">
+        <div class="questioncontent" style="display: none;">
             <h2 class="questiontitle"></h2>
 
             <div class="choices">
@@ -34,11 +34,12 @@
         <h2 class="result-text"></h2>
     </div>
     <div class="input-section" style="display: none;">
-<label for ="initials">Enter your initials:</label>
-<input type="text" id="initials"/>
-<button id="saveScore">Save your Score</button>
+        <label for="initials">Enter your initials:</label>
+        <input type="text" id="initials" />
+        <button id="saveScore">Save your Score</button>
     </div>
 
+    <script src="questions.js"></script>
     <script src="script.js"></script>
 </body>
 

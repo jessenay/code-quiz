@@ -32,13 +32,14 @@
 
 .startbutton:hover {
     background-color: aliceblue;
+    color: black;
 }
 
 .questioncontent {
     text-align: center;
     background-color: aliceblue;
     height: 400px;
-  margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 .questiontitle {
@@ -46,7 +47,7 @@
 }
 
 .choices {
-    display:grid;
+    display: grid;
     grid-template-rows: 80px 80px 80px 80px;
 }
 
@@ -56,14 +57,37 @@
 }
 
 .result-container {
-    background-color: aliceblue;
-display: flex;
-justify-content: center;
-align-items: center;
-margin-bottom: 70px;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
 }
 
 .input-section {
     color: aliceblue;
     text-align: center;
+}
+
+.highscores {
+    height: 50px;
+    width: 200px;
+    font-size: 20px;
+    background-color: aliceblue;
+}
+
+.scorespage {
+    background-color: black;
+    color: aliceblue;
+}
+
+.scorestitle {
+    text-align: center;
+    font-size: 100px;
+    border-bottom: 20px;
+    border-style: solid;
+}
+
+#scores {
+    font-size: 30px;
 }
