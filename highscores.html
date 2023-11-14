@@ -16,7 +16,7 @@
     </ul>
 
     <div>
-        <button>Clear Leaderboard</button>
+        <button id="clearLeaderboardBtn">Clear Leaderboard</button>
     </div>
 
     <div>
@@ -35,11 +35,11 @@
         }
 
         function clearLeaderboard() {
-            localStorage.clear();
+            localStorage.removeItem("highScores");
             scoresEl.innerHTML = '';
         }
 
-        document.addEventListener("click", clearLeaderboard);
+        document.getElementById("clearLeaderboardBtn").addEventListener("click", clearLeaderboard);
     </script>
 </body>
 
