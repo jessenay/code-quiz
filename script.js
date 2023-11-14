@@ -95,12 +95,9 @@ function checkanswer() {
 document.getElementById("saveScore").addEventListener("click", function () {
     const initials = document.getElementById("initials").value;
     if (initials.trim() !== "") {
-        // Assuming you have an array to store high scores
         const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
         highScores.push({ initials, score: timeLeft });
         localStorage.setItem("highScores", JSON.stringify(highScores));
-
-        // You can redirect the user to a high scores page or update the UI accordingly
         console.log("Score saved!");
         window.location.href = "./highscores.html"
     } else {
