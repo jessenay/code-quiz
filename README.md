@@ -18,5 +18,9 @@ Please refer to the LICENSE in the repo
 Jesse Nay
 
 ## Link to deployed application
+https://jessenay.github.io/code-quiz/
 
-## Screenshot
+## Screenshots
+![127 0 0 1_5500_challenges_code-quiz_index html](https://github.com/jessenay/code-quiz/assets/141958797/61257680-8040-4e79-b432-8eeaf5e79453)
+
+![jessenay github io_code-quiz_highscores html](https://github.com/jessenay/code-quiz/assets/141958797/ce9f5348-68fe-4f35-b275-9ef65b1cabf4)
